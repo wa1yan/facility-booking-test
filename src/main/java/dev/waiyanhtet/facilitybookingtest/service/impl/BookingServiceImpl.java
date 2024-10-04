@@ -51,7 +51,7 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     public List<BookingResponse> retrieveBooking(Long customerId) {
-        var bookingList = bookingRepository.findAll();
+        var bookingList = bookingRepository.findByCustomerId(customerId);
         return bookingList.stream().map(bookingMapper::asBookingResponse).toList();
     }
 

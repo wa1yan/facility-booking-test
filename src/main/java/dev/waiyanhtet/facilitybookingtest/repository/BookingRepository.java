@@ -17,4 +17,6 @@ public interface BookingRepository extends JpaRepository<BookingEntity, Long> {
     List<BookingEntity> findAllByExpiredBooking(LocalDateTime twoHoursAgo, BookingStatus bookingStatus);
 
     Optional<BookingEntity> findByBookingStatusAndId(BookingStatus bookingStatus, Long bookingId);
+
+    List<BookingEntity> findByCustomerId(Long customerId);
 }
